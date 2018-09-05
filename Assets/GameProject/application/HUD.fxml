@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1024.0" minHeight="-Infinity" minWidth="720.0" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DamagePlayer">
+   <children>
+      <Pane fx:id="BackgroundPane" layoutX="14.0" layoutY="633.0" prefHeight="55.0" prefWidth="177.0">
+         <children>
+            <ImageView fx:id="NoHeart1" fitHeight="29.0" fitWidth="29.0" layoutX="34.0" layoutY="193.0" y="-180.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/NoHeart.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="NoHeart2" fitHeight="29.0" fitWidth="29.0" layoutX="75.0" layoutY="193.0" y="-180.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/NoHeart.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="NoHeart3" fitHeight="29.0" fitWidth="29.0" layoutX="115.0" layoutY="193.0" y="-180.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/NoHeart.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="Hearter1" fitHeight="29.0" fitWidth="29.0" layoutX="34.0" layoutY="193.0" y="-180.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Heart.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="Hearter2" fitHeight="29.0" fitWidth="29.0" layoutX="75.0" layoutY="193.0" y="-180.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Heart.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="Hearter3" fitHeight="29.0" fitWidth="29.0" layoutX="115.0" layoutY="193.0" y="-180.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Heart.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1024.0" minHeight="-Infinity" minWidth="720.0" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <Pane fx:id="BackgroundPane" prefHeight="720.0" prefWidth="1024.0">
+         <children>
+            <ImageView fitHeight="920.0" fitWidth="1024.0" y="-180.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Background.png" />
+               </image>
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" height="255.0" radius="63.25" width="0.0" />
+               </effect>
+            </ImageView>
+            <Text fill="WHITE" layoutX="320.0" layoutY="139.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="ALIEN BOY" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="66.0" />
+               </font>
+               <effect>
+                  <GaussianBlur radius="39.75" />
+               </effect>
+            </Text>
+            <Text fill="WHITE" layoutX="320.0" layoutY="138.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="ALIEN BOY" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="66.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Text>
+            <JFXButton layoutX="919.0" layoutY="667.0" onMouseClicked="#ChangeMusic" text="Change Music" />
+            <ImageView fitHeight="77.0" fitWidth="47.0" layoutX="154.0" layoutY="390.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Torch.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="77.0" fitWidth="47.0" layoutX="824.0" layoutY="390.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Torch.gif" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="RegisterPane" layoutY="-100.0" prefHeight="920.0" prefWidth="1024.0" visible="false">
+         <children>
+            <ImageView fitHeight="481.0" fitWidth="500.0" layoutX="320.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Register.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <JFXTextField fx:id="newUsername" alignment="CENTER" layoutX="363.0" layoutY="355.0" onKeyTyped="#typeClick" opacity="0.5" prefHeight="43.0" prefWidth="278.0" promptText="Enter Username">
+               <font>
+                  <Font name="Bookman Old Style" size="21.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </JFXTextField>
+            <JFXPasswordField fx:id="newPassword1" alignment="CENTER" focusColor="#ab7d3d" layoutX="366.0" layoutY="438.0" onKeyTyped="#typeClick" opacity="0.5" prefHeight="40.0" prefWidth="272.0" promptText="Enter Password">
+               <font>
+                  <Font name="Bookman Old Style" size="21.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </JFXPasswordField>
+            <JFXPasswordField fx:id="newPassword2" alignment="CENTER" focusColor="#ab7d3d" layoutX="366.0" layoutY="522.0" onKeyTyped="#typeClick" opacity="0.5" prefHeight="40.0" prefWidth="272.0" promptText="Confirm Password">
+               <font>
+                  <Font name="Bookman Old Style" size="21.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </JFXPasswordField>
+            <Text fill="WHITE" layoutX="438.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style" size="25.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="63.0" fitWidth="40.0" layoutX="314.0" layoutY="292.0" onMouseClicked="#backMenu" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Back.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <JFXButton layoutX="426.0" layoutY="610.0" onMouseClicked="#registerUser" opacity="0.5" prefHeight="40.0" prefWidth="152.0" text="REGISTER" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fx:id="DuplicateUsernameError" fitHeight="29.0" fitWidth="29.0" layoutX="655.0" layoutY="362.0" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Error.png" />
+               </image>
+               <effect>
+                  <ColorAdjust hue="-0.19">
+                     <input>
+                        <Glow />
+                     </input>
+                  </ColorAdjust>
+               </effect>
+            </ImageView>
+            <ImageView fx:id="PasswordConfirmationError" fitHeight="29.0" fitWidth="29.0" layoutX="655.0" layoutY="528.0" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Error.png" />
+               </image>
+               <effect>
+                  <ColorAdjust hue="-0.19">
+                     <input>
+                        <Glow />
+                     </input>
+                  </ColorAdjust>
+               </effect>
+            </ImageView>
+            <Text fx:id="PasswordErrorMessage" fill="#d71515" layoutX="336.0" layoutY="539.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="This is an error message" textAlignment="CENTER" visible="false" wrappingWidth="250.13671875" x="50.0" y="50.0">
+               <font>
+                  <Font name="Bookman Old Style" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="UserErrorMessage" fill="#d71515" layoutX="336.0" layoutY="376.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="This is an error message" textAlignment="CENTER" visible="false" wrappingWidth="250.13671875" x="50.0" y="50.0">
+               <font>
+                  <Font name="Bookman Old Style" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="MainMenuPane" layoutY="-100.0" prefHeight="720.0" prefWidth="1024.0" visible="false">
+         <children>
+            <ImageView disable="true" fitHeight="481.0" fitWidth="500.0" layoutX="320.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/MainMenu.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="ProfileError" fitHeight="29.0" fitWidth="29.0" layoutX="608.0" layoutY="566.0" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Error.png" />
+               </image>
+               <effect>
+                  <ColorAdjust hue="-0.19">
+                     <input>
+                        <Glow />
+                     </input>
+                  </ColorAdjust>
+               </effect>
+            </ImageView>
+            <ImageView fx:id="ShopError" fitHeight="29.0" fitWidth="29.0" layoutX="608.0" layoutY="464.0" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Error.png" />
+               </image>
+               <effect>
+                  <ColorAdjust hue="-0.19">
+                     <input>
+                        <Glow />
+                     </input>
+                  </ColorAdjust>
+               </effect>
+            </ImageView>
+            <Text fx:id="ShopErrorMessage" fill="#d71515" layoutX="348.0" layoutY="537.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="You must be logged in to access the shop" textAlignment="CENTER" visible="false" wrappingWidth="339.13671875">
+               <font>
+                  <Font name="Bookman Old Style" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <JFXButton layoutX="71.0" layoutY="-8.0" onMouseClicked="#ChangeMusic" prefHeight="45.0" prefWidth="136.0" text="dontremovethis" />
+            <JFXButton fx:id="ToShop" layoutX="433.0" layoutY="456.0" onMouseClicked="#ShopMenu" opacity="0.5" prefHeight="45.0" prefWidth="147.0" text="Shop">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="ToProfile" layoutX="433.0" layoutY="558.0" onMouseClicked="#ProfileMenu" opacity="0.5" prefHeight="45.0" prefWidth="147.0" text="Profile">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="433.0" layoutY="653.0" onMouseClicked="#Logout" opacity="0.5" prefHeight="49.0" prefWidth="147.0" text="Logout">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="25.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="433.0" layoutY="360.0" onMouseClicked="#LevelMenu" opacity="0.5" prefHeight="45.0" prefWidth="147.0" text="Play ">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Text fx:id="UserDisplay" fill="#393131" layoutX="320.0" layoutY="535.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="395.13671875" y="200.0">
+               <font>
+                  <Font name="Bookman Old Style" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="ProfileErrorMessage" fill="#d71515" layoutX="332.0" layoutY="635.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="You must be logged in to access your profile" textAlignment="CENTER" visible="false" wrappingWidth="360.13671875">
+               <font>
+                  <Font name="Bookman Old Style" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <ImageView fx:id="PasswordError1" fitHeight="40.0" fitWidth="40.0" layoutX="647.0" layoutY="215.0" onMouseClicked="#LeaderboardMenu" opacity="0.91" y="100.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/trophy.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="LoginPane" layoutY="-100.0" prefHeight="720.0" prefWidth="1024.0">
+         <children>
+            <ImageView disable="true" fitHeight="481.0" fitWidth="500.0" layoutX="320.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Menu.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <Text layoutX="363.0" layoutY="580.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? Register, or play as a Guest!" textAlignment="CENTER" wrappingWidth="290.591796875">
+               <font>
+                  <Font name="Bookman Old Style" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <ImageView fx:id="UsernameError" fitHeight="29.0" fitWidth="29.0" layoutX="650.0" layoutY="361.0" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Error.png" />
+               </image>
+               <effect>
+                  <ColorAdjust hue="-0.19">
+                     <input>
+                        <Glow />
+                     </input>
+                  </ColorAdjust>
+               </effect>
+            </ImageView>
+            <ImageView fx:id="PasswordError" fitHeight="29.0" fitWidth="29.0" layoutX="650.0" layoutY="440.0" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Error.png" />
+               </image>
+               <effect>
+                  <ColorAdjust hue="-0.19">
+                     <input>
+                        <Glow />
+                     </input>
+                  </ColorAdjust>
+               </effect>
+            </ImageView>
+            <JFXTextField fx:id="usernameField" alignment="CENTER" layoutX="363.0" layoutY="354.0" onKeyTyped="#typeClick" opacity="0.5" prefHeight="43.0" prefWidth="278.0" promptText="Enter Username">
+               <font>
+                  <Font name="Bookman Old Style" size="21.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </JFXTextField>
+            <JFXPasswordField fx:id="passwordField" alignment="CENTER" focusColor="#ab7d3d" layoutX="366.0" layoutY="431.0" onKeyTyped="#typeClick" opacity="0.5" prefHeight="45.0" prefWidth="272.0" promptText="Enter Password">
+               <font>
+                  <Font name="Bookman Old Style" size="21.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </JFXPasswordField>
+            <JFXButton layoutX="352.0" layoutY="633.0" onMouseClicked="#RegisterMenu" opacity="0.5" prefHeight="45.0" prefWidth="138.0" text="REGISTER" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Text opacity="0.56" strokeType="OUTSIDE" strokeWidth="0.0" text="Cole Gifford" textAlignment="CENTER" wrappingWidth="136.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <JFXButton layoutX="532.0" layoutY="633.0" onMouseClicked="#GuestLogin" opacity="0.5" prefHeight="43.0" prefWidth="136.0" text="GUEST LOGIN" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="426.0" layoutY="500.0" onMouseClicked="#Login" opacity="0.5" prefHeight="40.0" prefWidth="152.0" text="LOGIN" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Text fill="WHITE" layoutX="459.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="alpha v 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style" size="25.0" />
+               </font>
+            </Text>
+            <Text fx:id="ErrorMessage" fill="#d71515" layoutX="382.0" layoutY="425.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="This is an error message" textAlignment="CENTER" visible="false" wrappingWidth="250.13671875">
+               <font>
+                  <Font name="Bookman Old Style" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="ProfilePane" prefHeight="720.0" prefWidth="1024.0" visible="false">
+         <children>
+            <ImageView disable="true" fitHeight="481.0" fitWidth="500.0" layoutX="315.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Profile.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <Text fx:id="PlayerName" layoutX="502.0" layoutY="254.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="PlayerName" textAlignment="CENTER" underline="true" wrappingWidth="186.591796875">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="22.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <ImageView fx:id="Avatar" fitHeight="112.0" fitWidth="113.0" layoutX="357.0" layoutY="265.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/jeffrey_miller_PHD.jpg" />
+               </image>
+            </ImageView>
+            <Text opacity="0.56" strokeType="OUTSIDE" strokeWidth="0.0" text="Cole Gifford" textAlignment="CENTER" wrappingWidth="136.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="ErrorMessage1" fill="#d71515" layoutX="377.0" layoutY="313.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="This is an error message" textAlignment="CENTER" visible="false" wrappingWidth="250.13671875">
+               <font>
+                  <Font name="Bookman Old Style" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="CurrentCoins" layoutX="534.0" layoutY="288.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="1000 coins" wrappingWidth="186.591796875">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="Score" layoutX="534.0" layoutY="345.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="500000 total coins" wrappingWidth="186.591796875">
+               <font>
+                  <Font name="Bookman Old Style" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text layoutX="323.0" layoutY="441.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop Purchases" textAlignment="CENTER" wrappingWidth="367.9999969750643">
+               <font>
+                  <Font name="Bookman Old Style" size="17.0" />
+               </font>
+               <effect>
+                  <Blend />
+               </effect>
+            </Text>
+            <ImageView fx:id="Skin1" fitHeight="40.0" fitWidth="40.0" layoutX="363.0" layoutY="477.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Skin1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="HealthUpgrade" fitHeight="40.0" fitWidth="47.0" layoutX="359.0" layoutY="565.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="SpeedUpgrade" fitHeight="40.0" fitWidth="40.0" layoutX="486.0" layoutY="565.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Speed.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.12" contrast="1.0" hue="1.0" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="Skin2" fitHeight="40.0" fitWidth="40.0" layoutX="486.0" layoutY="477.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Skin2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Skin3" fitHeight="40.0" fitWidth="40.0" layoutX="612.0" layoutY="477.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Skin3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Skin1Buy" fitHeight="45.0" fitWidth="47.0" layoutX="359.0" layoutY="475.0" opacity="0.15">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Skin2Buy" fitHeight="45.0" fitWidth="47.0" layoutX="483.0" layoutY="475.0" opacity="0.15">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Skin3Buy" fitHeight="45.0" fitWidth="47.0" layoutX="609.0" layoutY="475.0" opacity="0.15">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="HealthUpgradeBuy" fitHeight="45.0" fitWidth="47.0" layoutX="359.0" layoutY="563.0" opacity="0.15">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="SpeedUpgradeBuy" fitHeight="45.0" fitWidth="47.0" layoutX="483.0" layoutY="563.0" opacity="0.15">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="DamageUpgradeBuy" fitHeight="45.0" fitWidth="47.0" layoutX="609.0" layoutY="563.0" opacity="0.15">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="DamageUpgrade" fitHeight="40.0" fitWidth="40.0" layoutX="612.0" layoutY="565.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Target.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="40.0" layoutX="303.0" layoutY="70.0" onMouseClicked="#profileBack" pickOnBounds="true" preserveRatio="true" y="100.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Back.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="ShopPane" layoutY="-100.0" prefHeight="720.0" prefWidth="1024.0" visible="false">
+         <children>
+            <ImageView disable="true" fitHeight="481.0" fitWidth="500.0" layoutX="320.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Shop.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <Text fx:id="ShopCurrency" layoutX="469.0" layoutY="712.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="500000 " wrappingWidth="186.591796875">
+               <font>
+                  <Font name="Bookman Old Style" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <ImageView fx:id="ShopSkin1" fitHeight="85.0" fitWidth="88.0" layoutX="344.0" layoutY="393.0" onMouseClicked="#buyItemDisplay" onMouseEntered="#HoverItem" onMouseExited="#ClearMessage">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Skin1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopDamageUpgrade" fitHeight="85.0" fitWidth="85.0" layoutX="593.0" layoutY="565.0" onMouseClicked="#buyItemDisplay" onMouseEntered="#HoverItem" onMouseExited="#ClearMessage">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Target.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="40.0" layoutX="308.0" layoutY="182.0" onMouseClicked="#shopBack" pickOnBounds="true" preserveRatio="true" y="100.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Back.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ShopSkin2" fitHeight="85.0" fitWidth="88.0" layoutX="469.0" layoutY="393.0" onMouseClicked="#buyItemDisplay" onMouseEntered="#HoverItem" onMouseExited="#ClearMessage">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Skin2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopSkin3" fitHeight="85.0" fitWidth="85.0" layoutX="593.0" layoutY="393.0" onMouseClicked="#buyItemDisplay" onMouseEntered="#HoverItem" onMouseExited="#ClearMessage">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Skin3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopHealthUpgrade" fitHeight="85.0" fitWidth="88.0" layoutX="344.0" layoutY="567.0" onMouseClicked="#buyItemDisplay" onMouseEntered="#HoverItem" onMouseExited="#ClearMessage">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopSpeedUpgrade" fitHeight="85.0" fitWidth="88.0" layoutX="469.0" layoutY="567.0" onMouseClicked="#buyItemDisplay" onMouseEntered="#HoverItem" onMouseExited="#ClearMessage">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Speed.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopSkin1Buy" fitHeight="85.0" fitWidth="88.0" layoutX="343.0" layoutY="393.0" onMouseClicked="#SwitchSkin" opacity="0.12" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopDamageUpgradeBuy" fitHeight="85.0" fitWidth="85.0" layoutX="594.0" layoutY="565.0" opacity="0.12" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopSkin2Buy" fitHeight="85.0" fitWidth="88.0" layoutX="468.0" layoutY="393.0" onMouseClicked="#SwitchSkin" opacity="0.12" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopSkin3Buy" fitHeight="85.0" fitWidth="85.0" layoutX="594.0" layoutY="393.0" onMouseClicked="#SwitchSkin" opacity="0.12" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopHealthUpgradeBuy" fitHeight="85.0" fitWidth="88.0" layoutX="343.0" layoutY="565.0" opacity="0.12" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ShopSpeedUpgradeBuy" fitHeight="85.0" fitWidth="88.0" layoutX="468.0" layoutY="565.0" opacity="0.12" visible="false">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/check.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="ShopMessage" layoutX="337.0" layoutY="336.0" opacity="0.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Increases your movement speed - 10 Coins" textAlignment="CENTER" wrappingWidth="350.591796875" y="200.0">
+               <font>
+                  <Font name="Bookman Old Style" size="13.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <JFXButton onMouseClicked="#ChangeMusic" text="Change Music" />
+            <Text fx:id="ShopCurrency2" layoutX="420.0" layoutY="516.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="Character Upgrades" textAlignment="CENTER" wrappingWidth="186.591796875">
+               <font>
+                  <Font name="Bookman Old Style" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="ShopCurrency21" layoutX="420.0" layoutY="347.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="Skins" textAlignment="CENTER" wrappingWidth="186.591796875">
+               <font>
+                  <Font name="Bookman Old Style" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <JFXButton fx:id="SkinMessage" layoutX="328.0" layoutY="348.0" onMouseClicked="#ResetSkin" opacity="0.55" prefHeight="25.0" prefWidth="368.0" text=" Current Skin Equipped: Pink - Click to Reset">
+               <effect>
+                  <DropShadow color="#8d6e6e" />
+               </effect>
+               <font>
+                  <Font name="Bookman Old Style" size="13.0" />
+               </font>
+            </JFXButton>
+            <Text fx:id="ErrorMessage11" fill="#d71515" layoutX="329.0" layoutY="485.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="Not enough money!" textAlignment="CENTER" wrappingWidth="368.0" y="200.0">
+               <font>
+                  <Font name="Bookman Old Style" size="16.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="LeaderboardPane" layoutY="-100.0" prefHeight="720.0" prefWidth="1024.0" visible="false">
+         <children>
+            <ImageView disable="true" fitHeight="481.0" fitWidth="500.0" layoutX="320.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Leaderboard.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="40.0" layoutX="308.0" layoutY="182.0" onMouseClicked="#leaderboardBack" pickOnBounds="true" preserveRatio="true" y="100.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Back.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <JFXButton onMouseClicked="#ChangeMusic" text="Change Music" />
+            <Text fx:id="Place1" layoutX="373.0" layoutY="360.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="278.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="Place2" layoutX="373.0" layoutY="415.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="278.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="Place3" layoutX="373.0" layoutY="471.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="278.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="Place4" layoutX="373.0" layoutY="528.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="278.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="Place5" layoutX="373.0" layoutY="585.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="278.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="Place6" layoutX="373.0" layoutY="642.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="278.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fx:id="Place7" layoutX="373.0" layoutY="701.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="278.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="LevelPane" layoutY="-100.0" prefHeight="720.0" prefWidth="1024.0" visible="false">
+         <children>
+            <ImageView disable="true" fitHeight="481.0" fitWidth="500.0" layoutX="320.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Levels.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="40.0" layoutX="308.0" layoutY="182.0" onMouseClicked="#levelBack" pickOnBounds="true" preserveRatio="true" y="100.0">
+               <image>
+                  <Image url="@../../bin/application/SpriteStorage/Back.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <JFXButton layoutX="1200.0" layoutY="377.0" onMouseClicked="#StartGame" prefHeight="96.0" prefWidth="91.0" text="DontRemove">
+               <font>
+                  <Font name="Bookman Old Style" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Text fx:id="Place11" layoutX="373.0" layoutY="341.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your level!" textAlignment="CENTER" wrappingWidth="278.0">
+               <font>
+                  <Font name="Bookman Old Style" size="18.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <JFXButton fx:id="Level3" layoutX="373.0" layoutY="574.0" onMouseClicked="#StartGame" prefHeight="96.0" prefWidth="91.0" text="Level 3">
+               <font>
+                  <Font name="Bookman Old Style" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="Level2" layoutX="554.0" layoutY="377.0" onMouseClicked="#StartGame" prefHeight="96.0" prefWidth="91.0" text="Level 2">
+               <font>
+                  <Font name="Bookman Old Style" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="Level4" layoutX="554.0" layoutY="574.0" onMouseClicked="#StartGame" prefHeight="96.0" prefWidth="91.0" text="Level 4">
+               <font>
+                  <Font name="Bookman Old Style" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="Level1" layoutX="373.0" layoutY="377.0" onMouseClicked="#StartGame" prefHeight="96.0" prefWidth="91.0" text="Level 1">
+               <font>
+                  <Font name="Bookman Old Style" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
